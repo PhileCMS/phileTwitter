@@ -1,13 +1,20 @@
 <?php
+/**
+ * Plugin class
+ */
+namespace Phile\Plugin\Phile\Twitter;
 
 /**
  * Parse content and wrap mentions and hashtags
  */
-
-class PhileTwitter extends \Phile\Plugin\AbstractPlugin implements \Phile\EventObserverInterface {
+class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\EventObserverInterface {
+	/**
+	 * the constructor
+	 */
 	public function __construct() {
 		\Phile\Event::registerEvent('before_parse_content', $this);
 	}
+
 	/**
 	 * parse text and wrap mentions and hashtags
 	 * @param  string $text the content to be parsed
@@ -34,6 +41,14 @@ class PhileTwitter extends \Phile\Plugin\AbstractPlugin implements \Phile\EventO
 		return $text;
 	}
 
+	/**
+	 * event method
+	 *
+	 * @param string $eventKey
+	 * @param null   $data
+	 *
+	 * @return mixed|void
+	 */
 	public function on($eventKey, $data = null) {
 		if ($eventKey == 'before_parse_content') {
 			// assign the modified content back in the page
