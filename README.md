@@ -17,7 +17,14 @@ php composer.phar require phile/twitter:*
 
 * Install [Phile](https://github.com/PhileCMS/Phile)
 * Clone this repo into `plugins/phile/twitter`
-* add `$config['plugins']['phile\twitter'] = array('active' => true);` to your `config.php`
+
+### 2. Activation
+
+After you have installed the plugin. You need to add the following line to your `config.php` file:
+
+```
+$config['plugins']['phile\\twitter'] = array('active' => true);
+``
 
 ### Markdown Usage
 
