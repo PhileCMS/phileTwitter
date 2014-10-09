@@ -1,7 +1,7 @@
 {
 	"name": "phile/twitter",
 	"type": "phile-plugin",
-    "version": "1.0.0",
+    "version": "1.0.1",
     "license": "MIT",
     "description": "Parse content and wrap Twitter mentions and hashtags",
     "homepage": "http://philecms.com",
