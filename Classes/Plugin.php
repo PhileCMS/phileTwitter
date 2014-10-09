@@ -27,11 +27,7 @@ class Plugin extends \Phile\Plugin\AbstractPlugin implements \Phile\Gateway\Even
 		$title = ($this->settings['title']) ? " title=\"@$1\" ": "";
 		// source http://goo.gl/S2rDdc
 		$text = preg_replace(
-			'@(https?://([-\w\.]+)+(/([\w/_\.]*(\?\S+)?(#\S+)?)?)?)@',
-			'<a ' . $target . $class . $title . 'href="$1">$1</a>',
-			$text);
-		$text = preg_replace(
-			'/@(\w+)/',
+			'/(?<=^|\s)@([a-z0-9_]+)/i',
 			'<a ' . $target . $class . $title . ' href="http://twitter.com/$1">@$1</a>',
 			$text);
 		$text = preg_replace(
